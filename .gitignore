@@ -12,3 +12,8 @@ apps/web/public/models/
 
 # Local recovery bundles of this repo's own history — never source.
 *.bundle
+
+# Next rewrites this between .next/types and .next/dev/types depending on whether
+# dev or build ran last, so tracking it means a dirty tree on every switch. It is
+# regenerated automatically, and typecheck passes without it.
+next-env.d.ts
