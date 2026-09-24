@@ -9,3 +9,6 @@ coverage/
 .env.local
 apps/web/public/mediapipe/
 apps/web/public/models/
+
+# Local recovery bundles of this repo's own history — never source.
+*.bundle
