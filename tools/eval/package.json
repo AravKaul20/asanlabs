@@ -1,21 +1,21 @@
 {
-  "name": "@asan/core",
+  "name": "@asan/eval",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "exports": {
-    ".": "./src/index.ts",
-    "./testing": "./src/testing/skeleton.ts"
-  },
   "scripts": {
+    "eval": "node src/cli.ts",
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@asan/core": "workspace:*",
+    "@asan/poses": "workspace:*",
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
     "typescript": "^6.0.3",
     "vitest": "^5.0.1"
   }

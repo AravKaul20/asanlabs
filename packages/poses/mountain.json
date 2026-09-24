@@ -1,0 +1,101 @@
+{
+  "id": "mountain",
+  "name": "Mountain",
+  "version": 1,
+  "view": "front",
+  "sides": ["left", "right"],
+  "requiredLandmarks": [
+    "left_shoulder",
+    "right_shoulder",
+    "left_hip",
+    "right_hip",
+    "left_knee",
+    "right_knee",
+    "left_ankle",
+    "right_ankle"
+  ],
+  "settleShape": [
+    {
+      "feature": "torso_tilt",
+      "range": [0, 35]
+    },
+    {
+      "feature": "left_knee_angle",
+      "range": [155, 180]
+    },
+    {
+      "feature": "right_knee_angle",
+      "range": [155, 180]
+    }
+  ],
+  "rules": [
+    {
+      "id": "off-balance",
+      "priority": "safety",
+      "feature": "torso_tilt",
+      "range": [0, 20],
+      "hysteresis": 3,
+      "cues": {
+        "tooHigh": ["You're leaning a long way. Come back over your feet."]
+      },
+      "highlight": ["left_shoulder", "right_shoulder", "left_hip", "right_hip"],
+      "weight": 3,
+      "source": "self"
+    },
+    {
+      "id": "torso-upright",
+      "priority": "alignment",
+      "feature": "torso_tilt",
+      "range": [0, 8],
+      "hysteresis": 2,
+      "cues": {
+        "tooHigh": [
+          "Stand tall. Stack your shoulders over your hips.",
+          "Lengthen up through the crown of your head."
+        ]
+      },
+      "highlight": ["left_shoulder", "right_shoulder", "left_hip", "right_hip"],
+      "weight": 2,
+      "source": "self"
+    },
+    {
+      "id": "left-leg-straight",
+      "priority": "alignment",
+      "feature": "left_knee_angle",
+      "range": [168, 180],
+      "hysteresis": 4,
+      "cues": {
+        "tooLow": ["Straighten your left leg."]
+      },
+      "highlight": ["left_hip", "left_knee", "left_ankle"],
+      "weight": 1,
+      "source": "self"
+    },
+    {
+      "id": "right-leg-straight",
+      "priority": "alignment",
+      "feature": "right_knee_angle",
+      "range": [168, 180],
+      "hysteresis": 4,
+      "cues": {
+        "tooLow": ["Straighten your right leg."]
+      },
+      "highlight": ["right_hip", "right_knee", "right_ankle"],
+      "weight": 1,
+      "source": "self"
+    },
+    {
+      "id": "arms-by-sides",
+      "priority": "refinement",
+      "feature": "left_shoulder_angle",
+      "range": [0, 25],
+      "hysteresis": 5,
+      "cues": {
+        "tooHigh": ["Let your arms rest by your sides."]
+      },
+      "highlight": ["left_shoulder", "left_elbow", "left_wrist"],
+      "weight": 1,
+      "source": "self"
+    }
+  ]
+}

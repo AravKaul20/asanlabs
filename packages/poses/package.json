@@ -1,11 +1,10 @@
 {
-  "name": "@asan/core",
+  "name": "@asan/poses",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./testing": "./src/testing/skeleton.ts"
+    ".": "./index.ts"
   },
   "scripts": {
     "test": "vitest run",
@@ -13,7 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "zod": "^4.6.5"
+    "@asan/core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^6.0.3",

@@ -8,9 +8,9 @@
  * fixture). Once real recordings exist they replace these, not the other way
  * round.
  */
-import { LANDMARK_NAMES, type LandmarkName } from "../../src/landmarks.ts";
-import type { Vec3 } from "../../src/geometry.ts";
-import type { Frame } from "../../src/types.ts";
+import { LANDMARK_NAMES, type LandmarkName } from "../landmarks.ts";
+import type { Vec3 } from "../geometry.ts";
+import type { Frame } from "../types.ts";
 
 export type Joints = Record<LandmarkName, Vec3>;
 

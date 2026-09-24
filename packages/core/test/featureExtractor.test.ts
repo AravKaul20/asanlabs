@@ -6,7 +6,7 @@ import {
   WARRIOR_II_LEFT,
   WARRIOR_II_RIGHT,
   withJoints,
-} from "./fixtures/skeleton.ts";
+} from "../src/testing/skeleton.ts";
 
 const extractor = new FeatureExtractor();
 const val = (f: ReturnType<FeatureExtractor["extract"]>, name: string) => f.values[name]?.value;

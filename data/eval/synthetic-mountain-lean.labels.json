@@ -1,0 +1,19 @@
+{
+  "recording": "synthetic-mountain-lean.json",
+  "pose": "mountain",
+  "side": "left",
+  "person": "synthetic-a",
+  "mistakes": [
+    {
+      "ruleId": "torso-upright",
+      "start": 2800,
+      "end": 6867
+    },
+    {
+      "ruleId": "off-balance",
+      "start": 3333,
+      "end": 6333
+    }
+  ],
+  "notes": "Synthetic. Upright Mountain, a 26 degree lean held for 2.5 s, then upright again."
+}

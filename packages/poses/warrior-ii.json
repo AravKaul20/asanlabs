@@ -1,0 +1,109 @@
+{
+  "id": "warrior-ii",
+  "name": "Warrior II",
+  "version": 1,
+  "view": "front",
+  "sides": ["left", "right"],
+  "requiredLandmarks": [
+    "left_shoulder",
+    "right_shoulder",
+    "left_elbow",
+    "right_elbow",
+    "left_wrist",
+    "right_wrist",
+    "left_hip",
+    "right_hip",
+    "left_knee",
+    "right_knee",
+    "left_ankle",
+    "right_ankle"
+  ],
+  "settleShape": [
+    {
+      "feature": "front_knee_angle",
+      "range": [60, 135]
+    },
+    {
+      "feature": "back_knee_angle",
+      "range": [140, 180]
+    },
+    {
+      "feature": "torso_tilt",
+      "range": [0, 30]
+    }
+  ],
+  "rules": [
+    {
+      "id": "front-knee-over-ankle",
+      "priority": "safety",
+      "feature": "front_knee_over_ankle",
+      "range": [-0.12, 0.12],
+      "hysteresis": 0.04,
+      "cues": {
+        "tooHigh": [
+          "Your front knee is past your ankle. Ease it back so it stacks over your heel."
+        ],
+        "tooLow": ["Bring your front knee forward until it stacks over your ankle."]
+      },
+      "highlight": ["front_hip", "front_knee", "front_ankle"],
+      "weight": 3,
+      "source": "self"
+    },
+    {
+      "id": "front-knee-bend",
+      "priority": "alignment",
+      "feature": "front_knee_angle",
+      "range": [80, 110],
+      "hysteresis": 6,
+      "cues": {
+        "tooHigh": [
+          "Bend your front knee deeper, toward a right angle.",
+          "Sink a little lower into the front leg."
+        ],
+        "tooLow": ["Come up slightly out of the front knee."]
+      },
+      "highlight": ["front_hip", "front_knee", "front_ankle"],
+      "weight": 2,
+      "source": "self"
+    },
+    {
+      "id": "back-leg-straight",
+      "priority": "alignment",
+      "feature": "back_knee_angle",
+      "range": [160, 180],
+      "hysteresis": 5,
+      "cues": {
+        "tooLow": ["Straighten your back leg and press through the outer edge of that foot."]
+      },
+      "highlight": ["back_hip", "back_knee", "back_ankle"],
+      "weight": 2,
+      "source": "self"
+    },
+    {
+      "id": "arms-level",
+      "priority": "alignment",
+      "feature": "arm_line_deviation",
+      "range": [0, 8],
+      "hysteresis": 3,
+      "cues": {
+        "tooHigh": ["Level your arms. Reach evenly in both directions."]
+      },
+      "highlight": ["left_shoulder", "right_shoulder", "left_wrist", "right_wrist"],
+      "weight": 1,
+      "source": "self"
+    },
+    {
+      "id": "torso-upright",
+      "priority": "alignment",
+      "feature": "torso_tilt",
+      "range": [0, 12],
+      "hysteresis": 3,
+      "cues": {
+        "tooHigh": ["Stack your shoulders over your hips. Try not to lean out over the front leg."]
+      },
+      "highlight": ["left_shoulder", "right_shoulder", "left_hip", "right_hip"],
+      "weight": 2,
+      "source": "self"
+    }
+  ]
+}

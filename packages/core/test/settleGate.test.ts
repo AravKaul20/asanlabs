@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { SettleGate } from "../src/settleGate.ts";
 import { FeatureExtractor } from "../src/features/extractor.ts";
 import { parsePose } from "../src/pose/schema.ts";
-import { buildFrame, MOUNTAIN, withJoints } from "./fixtures/skeleton.ts";
+import { buildFrame, MOUNTAIN, withJoints } from "../src/testing/skeleton.ts";
 import type { Frame } from "../src/types.ts";
 import { clone } from "./support/clone.ts";
 

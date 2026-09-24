@@ -4,3 +4,7 @@ node_modules
 dist
 coverage
 pnpm-lock.yaml
+
+# Recorded landmark blobs are data, not source. Labels stay formatted for editing.
+data/eval/*.json
+!data/eval/*.labels.json

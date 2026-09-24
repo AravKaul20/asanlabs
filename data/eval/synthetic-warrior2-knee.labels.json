@@ -1,0 +1,19 @@
+{
+  "recording": "synthetic-warrior2-knee.json",
+  "pose": "warrior-ii",
+  "side": "right",
+  "person": "synthetic-b",
+  "mistakes": [
+    {
+      "ruleId": "front-knee-bend",
+      "start": 3000,
+      "end": 6467
+    },
+    {
+      "ruleId": "front-knee-over-ankle",
+      "start": 3133,
+      "end": 6333
+    }
+  ],
+  "notes": "Synthetic. Correct Warrior II, front knee pushed 22 cm past the ankle for 2.5 s, then back."
+}
